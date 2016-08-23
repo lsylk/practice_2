@@ -13,17 +13,43 @@ def hello_world():
 #    prints "Hi" followed by the name.
 
 
+def greet_user(name):
+
+    print "Hi %s" % name
+
 # 3. Write a function that takes two integers and multiplies
 #    them together. Print the result.
 
+
+def multiplication(num1, num2):
+
+    print num1 * num2
 
 # 4. Write a function that takes a string and an integer and
 #    prints the string that many times
 
 
+def print_string_n_times(string, n):
+
+    print string * n
+
 # 5. Write a function that takes an integer and prints "Higher
 #    than 0" if higher than zero and "Lower than 0" if lower
 #    than zero. If the integer is 0 print "Zero".
+
+
+def compare_num_to_zero(num):
+
+    if num > 0:
+
+        print "Higher than zero"
+
+    elif num < 0:
+
+        print "Less than zero"
+
+    else:
+        print "Zero"
 
 
 # 6. Write a function that takes an integer and returns a
@@ -31,8 +57,31 @@ def hello_world():
 #    is evenly divisible by 3.
 
 
+def divisible_by_three(num):
+
+    if num % 3 == 0:
+
+        return True
+
+    else:
+
+        return False
+
 # 7. Write a function that takes a sentence as one string and
 #    returns the number of spaces.
+
+
+def count_spaces(sentence):
+
+    count = 0
+
+    for char in sentence:
+
+        if char == " ":
+
+            count += 1
+
+    return count
 
 
 # 8. Write a function that can be passed a meal price and a
@@ -40,6 +89,10 @@ def hello_world():
 #    (price + price * tip). **However:** passing in the tip
 #    percentage should be optional; if not given, it should
 #    default to 15%.
+
+def total_paid(meal_price, tip=0.15):
+
+    return meal_price + (meal_price * tip)
 
 
 # 9. Write a function that takes an integer as an argument and
@@ -51,6 +104,31 @@ def hello_world():
 #    on a number and unpack what is returned into two
 #    variables --- sign and parity (whether it's even or odd).
 #    Print sign and parity.
+
+def int_description(num):
+
+    if num > 0:
+
+        print "Positive"
+
+        if num % 2 == 0:
+
+            print "Even"
+
+        else:
+
+            print "Odd"
+    else:
+
+        print "Negative"
+
+        if num % 2 == 0:
+
+            print "Even"
+
+        else:
+
+            print "Odd"
 
 
 ################################################################
