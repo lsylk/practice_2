@@ -343,6 +343,20 @@ def add_num_to_list(num):
 
     return
 
+
+def add_num_to_list2(num, numbers):
+
+    """Adds a number to the numbers list and returns None.
+
+        >>> add_num_to_list2(8, [9,5])
+
+        >>> type(add_num_to_list2(8, [9,5]))
+        <type 'NoneType'>
+    """
+
+    numbers.append(num)
+
+
 #####################################################################
 # Test all functions.
 
