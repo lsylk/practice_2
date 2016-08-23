@@ -286,23 +286,13 @@ def person_title(name, job_title="Engineer"):
     """Returns the name of the person and his/her title.
 
         >>> person_title("Jane")
-        'Jane is a Engineer.'
+        'ENGINEER JANE'
 
-        >>> person_title("Jack", "Pilot")
-        'Jack is a Pilot.'
+        >> person_title("Jack", "Pilot")
+        'PILOT JACK'
     """
 
-    vowels = set(["a", "e", "i", "o", "u"])
-
-    if job_title[0] in vowels:
-
-        article = "an"
-
-    else:
-
-        article = "a"
-
-    return "%s is %s %s." % (name, article, job_title)
+    return "%s %s" % (job_title.upper(), name.upper())
 
 
 # 3. Given a recipient name & job title and a sender name,
@@ -314,12 +304,47 @@ def person_title(name, job_title="Engineer"):
 #    Use the function from #2 to construct the full title for the letter's
 #    greeting.
 
+def print_letter(recipient_name, sender_name, job_title="Engineer"):
+
+    """Prints the following letter:
+
+        Dear JOB_TITLE RECIPIENT_NAME, I think you are amazing!
+        Sincerely, SENDER_NAME.
+
+            >>> print_letter("Jordan", "Megan", "Lawyer")
+            Dear LAWYER JORDAN, I think you are amazing! 
+             Sincerely, MEGAN.
+
+            >>> print_letter("Jane", "Annie")
+            Dear ENGINEER JANE, I think you are amazing! 
+             Sincerely, ANNIE.
+    """
+
+    print "Dear " + person_title(recipient_name, job_title) + ", I think you are amazing! \n Sincerely, %s." % sender_name.upper()
+
 
 # 4. Turn the block of code from the directions into a function.
 #    This function will take a number and append it to an existing list
 #    called *numbers*. It doesn't need to return anything.
 
-#
+def add_num_to_list(num):
+    """Adds a number to the numbers list and returns None.
+
+    >>> add_num_to_list(8)
+    >>> add_num_to_list(9)
+
+    >>> type(add_num_to_list(9))
+    <type 'NoneType'>
+    """
+
+    numbers = []
+
+    numbers.append(num)
+
+    return
+
+#####################################################################
+# Test all functions.
 
 if __name__ == "__main__":
     import doctest
