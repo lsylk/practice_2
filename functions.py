@@ -191,9 +191,28 @@ def total_paid(meal_price, tip=0.15):
 
 def int_description(num):
     """Assess if the num is positive, negative, even and/or odd.
+
+        >>> int_description(56)
+        ['Positive', 'Even']
+
+        >>> sign, parity = int_description(56)
+
+        >>> print sign
+        Positive
+
+        >>> print parity
+        Even
+
+        >>> sign, parity = int_description(-3)
+
+        >>> print parity
+        Odd
+
+        >>> print sign
+        Negative
     """
 
-    if num > 0:
+    if num >= 0:
 
         sign = "Positive"
 
@@ -209,7 +228,16 @@ def int_description(num):
 
         parity = "Odd"
 
-    sign, parity = int_description(num)
+    return [sign, parity]
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Code below unpacks the what is returned from int_description function.
+
+    # sign, parity = int_description(num)
+
+    # print sign
+
+    # print parity
 
 
 ################################################################
