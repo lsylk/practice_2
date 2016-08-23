@@ -1,6 +1,7 @@
 ################################################################
 # PART ONE
 
+
 # 1. Write a function that does not take any arguments and
 #    prints "Hello World".
 
@@ -22,14 +23,14 @@ def greet_user(name):
     """Greets the user.
 
         >>> greet_user("Karen")
-        Hi Karen
+        Hi Karen!
 
         >>> name = "Jordan"
         >>> greet_user(name)
-        Hi Jordan
+        Hi Jordan!
     """
 
-    print "Hi %s" % name
+    print "Hi %s!" % name
 
 # 3. Write a function that takes two integers and multiplies
 #    them together. Print the result.
@@ -256,10 +257,53 @@ def int_description(num):
 #    Your function should return the total cost of the item,
 #    including tax.
 
+def total_cost(price, state, tax=0.05):
+    """Calculates the total price of an item including tax. It will apply 5%  for tax, except for CA which is 7%.
+
+        >>> total_cost(15, "MI")
+        15.75
+
+        >>> total_cost(15, "CA")
+        16.05
+
+        >>> total_cost(18, "cA")
+        19.26
+    """
+
+    if state.upper() == "CA":
+
+        tax = 0.07
+
+    return price + (price * tax)
+
+
 # 2. Turn the block of code from the directions into a function.
 #    Take a name and a job title as parameters, making it so the
 #    job title defaults to "Engineer" if a job title is not passed in.
 #    Return the person's title and name in one string.
+
+def person_title(name, job_title="Engineer"):
+    """Returns the name of the person and his/her title.
+
+        >>> person_title("Jane")
+        'Jane is a Engineer.'
+
+        >>> person_title("Jack", "Pilot")
+        'Jack is a Pilot.'
+    """
+
+    vowels = set(["a", "e", "i", "o", "u"])
+
+    if job_title[0] in vowels:
+
+        article = "an"
+
+    else:
+
+        article = "a"
+
+    return "%s is %s %s." % (name, article, job_title)
+
 
 # 3. Given a recipient name & job title and a sender name,
 #    print the following letter:
@@ -269,6 +313,7 @@ def int_description(num):
 #
 #    Use the function from #2 to construct the full title for the letter's
 #    greeting.
+
 
 # 4. Turn the block of code from the directions into a function.
 #    This function will take a number and append it to an existing list
